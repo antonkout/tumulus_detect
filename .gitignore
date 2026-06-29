@@ -17,3 +17,6 @@ runs/
 # Notebook cruft
 .ipynb_checkpoints/
 *-checkpoint.ipynb
+
+# Old/superseded code
+old_version/
