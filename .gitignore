@@ -20,3 +20,7 @@ runs/
 
 # Old/superseded code
 old_version/
+
+# Draft methodology doc (not for public repo)
+Tumulus_Detection_Methodology.docx
+*.pdf

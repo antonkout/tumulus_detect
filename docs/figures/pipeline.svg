@@ -1,0 +1,44 @@
+<svg viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="760" height="560" fill="#ffffff"/>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="7" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#888780"/>
+    </marker>
+  </defs>
+  <!-- INPUT -->
+  <rect x="250" y="20" width="260" height="52" rx="10" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="380" y="42" text-anchor="middle" font-size="14" font-weight="600" fill="#2C2C2A">Pleiades Neo GeoTIFF</text>
+  <text x="380" y="60" text-anchor="middle" font-size="11.5" fill="#888780">RGBN · 15 cm/px · arid Horn of Africa</text>
+  <line x1="380" y1="72" x2="380" y2="100" stroke="#888780" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- STAGE 1 -->
+  <rect x="120" y="104" width="520" height="118" rx="14" fill="#EEEDFE" stroke="#7F77DD" stroke-width="2"/>
+  <text x="144" y="130" font-size="11" font-weight="700" letter-spacing="1" fill="#534AB7">STAGE 1 — YOLOv8 PROPOSER</text>
+  <text x="144" y="156" font-size="16" font-weight="650" fill="#2C2C2A">Sliding-window CNN detection</text>
+  <text x="144" y="178" font-size="12.5" fill="#5F5E5A">Multi-band combos: RGB + CIR + NDVI</text>
+  <text x="144" y="196" font-size="12.5" fill="#5F5E5A">5-way test-time augmentation · nodata-tile skipping</text>
+  <text x="144" y="214" font-size="12.5" fill="#5F5E5A">Geographic-distance NMS + evaluation</text>
+  <text x="624" y="156" text-anchor="end" font-size="12.5" font-style="italic" fill="#5F5E5A">tumulus_detect.py</text>
+  <line x1="380" y1="222" x2="380" y2="262" stroke="#888780" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="392" y="247" font-size="12" font-style="italic" fill="#888780">candidate points (GeoPackage) — high recall, low precision</text>
+  <!-- STAGE 2 -->
+  <rect x="120" y="266" width="520" height="118" rx="14" fill="#E1F5EE" stroke="#1D9E75" stroke-width="2"/>
+  <text x="144" y="292" font-size="11" font-weight="700" letter-spacing="1" fill="#0F6E56">STAGE 2 — VLM VERIFIER</text>
+  <text x="144" y="318" font-size="16" font-weight="650" fill="#2C2C2A">Few-shot LLaVA via Ollama</text>
+  <text x="144" y="340" font-size="12.5" fill="#5F5E5A">Positive / negative reference patches in-context</text>
+  <text x="144" y="358" font-size="12.5" fill="#5F5E5A">Fine discrimination: vegetation, outcrops, shadows</text>
+  <text x="144" y="376" font-size="12.5" fill="#5F5E5A">Runs fully offline — no API keys</text>
+  <text x="624" y="318" text-anchor="end" font-size="12.5" font-style="italic" fill="#5F5E5A">vlm_verify_tumuli.py</text>
+  <line x1="380" y1="384" x2="380" y2="416" stroke="#888780" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- classes -->
+  <rect x="150" y="418" width="150" height="30" rx="15" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1.4"/>
+  <text x="225" y="437" text-anchor="middle" font-size="11.5" font-weight="650" fill="#0F6E56">TUMULUS</text>
+  <rect x="310" y="418" width="150" height="30" rx="15" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.4"/>
+  <text x="385" y="437" text-anchor="middle" font-size="11.5" font-weight="650" fill="#5F5E5A">POSSIBLE_TUMULUS</text>
+  <rect x="470" y="418" width="150" height="30" rx="15" fill="#FAECE7" stroke="#D85A30" stroke-width="1.4"/>
+  <text x="545" y="437" text-anchor="middle" font-size="11.5" font-weight="650" fill="#993C1D">NOT_TUMULUS</text>
+  <line x1="380" y1="448" x2="380" y2="480" stroke="#888780" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <!-- OUTPUT -->
+  <rect x="240" y="484" width="280" height="52" rx="10" fill="#F1EFE8" stroke="#B4B2A9" stroke-width="1.5"/>
+  <text x="380" y="506" text-anchor="middle" font-size="14" font-weight="600" fill="#2C2C2A">Verified tumuli (GeoPackage)</text>
+  <text x="380" y="524" text-anchor="middle" font-size="11.5" fill="#888780">→ QGIS review</text>
+</svg>
