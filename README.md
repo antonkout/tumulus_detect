@@ -10,7 +10,8 @@ A **two-stage pipeline**: a high-recall CNN proposer followed by a
 vision-language-model verifier. Ground-truth labels are scarce, so the design
 casts a wide net with YOLO and culls false positives with a VLM.
 
-![Two-stage detection–verification pipeline](docs/figures/pipeline.png)
+<img src="docs/figures/pipeline.png" alt="Two-stage detection–verification pipeline" width="600">
+
 
 *Stage 1 (YOLOv8) proposes candidate points at high recall; Stage 2 (LLaVA via
 Ollama) verifies each candidate as TUMULUS / POSSIBLE_TUMULUS / NOT_TUMULUS.*
@@ -27,7 +28,8 @@ Ollama) verifies each candidate as TUMULUS / POSSIBLE_TUMULUS / NOT_TUMULUS.*
 The training labels are point geometries; each is expanded to a fixed ~12 m
 bounding box (roughly one tumulus diameter) for detector training.
 
-![Training labels (n=32), red circle = 12 m bbox](docs/figures/training_labels.png)
+<img src="docs/figures/training_labels.png" alt="Training labels (n=32), red circle = 12 m bbox" width="500">
+
 
 ### Stage 2 — VLM verification
 - Each YOLO candidate patch is shown to a local vision LLM (LLaVA via Ollama)
@@ -56,7 +58,8 @@ proposer recovers a substantial fraction of known sites while, by design,
 producing many false positives that Stage 2 then filters. The figure below
 shows a Stage-1 sweep evaluated against ground truth.
 
-![Stage-1 evaluation vs. ground truth](docs/figures/eval_train.png)
+<img src="docs/figures/eval_train.png" alt="Stage-1 evaluation vs. ground truth" width="500">
+
 
 *Green dashed = ground truth · cyan = matched detection (TP) · red = false
 positive. Example run: TP=15, FN=17, FP=813, P≈0.02, R≈0.47, F1≈0.03
